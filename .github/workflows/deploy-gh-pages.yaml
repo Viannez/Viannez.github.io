@@ -31,6 +31,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
+          cache-dependency-path: my-portfolio/package-lock.json
           node-version: lts/*
           cache: 'npm'
       - name: Install dependencies
