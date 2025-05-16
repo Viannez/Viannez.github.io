@@ -25,13 +25,16 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    defaults:
+       run:
+         working-directory: ./my-portfolio/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          cache-dependency-path: my-portfolio/package-lock.json
+          cache-dependency-path: ./my-portfolio/package-lock.json
           node-version: lts/*
           cache: 'npm'
       - name: Install dependencies
